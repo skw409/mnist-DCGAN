@@ -1,7 +1,7 @@
 from datetime import datetime
 from torch import nn, optim
 import torch
-from model import generator, discriminator
+from dcgan import generator, discriminator
 from data import load_mnist_dataloader
 from argparse import ArgumentParser
 import logging
@@ -106,5 +106,6 @@ if __name__ == '__main__':
     # 保存到文件
     with open(f'{args.save_dir}/{time}/config.json', 'w') as f:
         json.dump(args_dict, f, indent=4)  # indent使文件可读
+
 
     main(args)
